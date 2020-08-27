@@ -1,0 +1,26 @@
+#
+# nekoimi <i@sakuraio.com>
+#
+
+version: '3'
+
+services:
+  redis:
+    image: redis:5-alpine
+    container_name: redis
+    ports:
+      - 6379:6379
+    networks:
+      - redis-network
+    volumes:
+      - "./redis.conf:/etc/redis/redis.conf"
+      - "./data:/data"
+    restart: always
+    privileged: true
+    command:
+      redis-server /etc/redis/redis.conf --appendonly yes
+
+
+networks:
+  redis-network:
+    driver: bridge
