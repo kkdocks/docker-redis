@@ -1,6 +1,6 @@
 FROM redis:5-alpine
 
-LABEL maintainer="yangjinbo <yangjinbo@yoyohr.com>"
+LABEL maintainer="nekoimi <nekoimime@gmail.com>"
 
 ARG timezone
 
